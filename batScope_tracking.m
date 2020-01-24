@@ -1,8 +1,19 @@
-function batScope_tracking
+function batScope_tracking(varargin)
 
 clear all
 %the "honey pot task" requires the bat to learn which of the 4 feeders
 %feeds with the highest probability
+
+name = [];
+
+% User inputs overrides
+nparams=length(varargin);
+for i=1:2:nparams
+    switch lower(varargin{i})
+        case 'batname'
+           name=varargin{i+1};
+        end
+end
 
 global h_directory h_run h_stop
 global h_probfeed1 h_probfeed2 h_probfeed3 h_probfeed4
@@ -59,7 +70,7 @@ h_directory = uicontrol(h_fig,'Style','edit','String','C:\tobias' ,'units','norm
 %default batName
 h_bat = uicontrol(h_fig,'Style','text','String','Bat Name','units','normalized',...
    'Position',[.01 .74 .3 .05],'fontsize',9,'fontweight','b'); 
-batName = uicontrol(h_fig,'Style','edit','String','Zuzu','units','normalized',...
+batName = uicontrol(h_fig,'Style','edit','String',name,'units','normalized',...
     'Position',[.01 .70 .96 .05],'fontsize',9,'fontweight','b');
 
 %hitting run starts the task
