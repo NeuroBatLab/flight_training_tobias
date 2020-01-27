@@ -83,7 +83,7 @@ plot(1:length(audioFilt),audioFilt);
 title(['Mic ' num2str(mic) ' Filered']);
 figure();
 plot(1:length(audioConCat),audioConCat);
-title(['Mic ' num2str(mic) ' raw']);
+title(['Mic ' num2str(mic)]);
 drawnow
 pause
 % hold on;
