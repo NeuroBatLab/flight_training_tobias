@@ -3,6 +3,7 @@ function run_rec_audio(varargin)
 %records audio and sync pulses
 global h_directory_aud h_run_aud h_stop_aud
 global IDsound fs rec_dur input_channels inter_file_time
+global batName dateSesh
 
 timeSesh = datestr(now,'hhMMss');
 homeDir_full = [h_directory_aud.String '\' timeSesh];
@@ -31,7 +32,7 @@ while h_stop_aud.Value < 1
     %get audio (should include ttl)
     [success, recbuf, pos] = soundmexpro('recgetdata', 'channel',2:7);
     clocktime = clock;
-    audiofile = [homeDir_full filesep 'audio_trial_' num2str(filecounter)]
+    audiofile = [homeDir_full filesep batName '_' dateSesh '_audio_trial_' num2str(filecounter)]
     audtic = tic;
     %save audio
     save(audiofile, 'recbuf','fs','bufsiz','audiofile','clocktime')

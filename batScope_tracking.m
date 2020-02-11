@@ -1,6 +1,6 @@
 function batScope_tracking(varargin)
 
-clear all
+%clear all
 %the "honey pot task" requires the bat to learn which of the 4 feeders
 %feeds with the highest probability
 

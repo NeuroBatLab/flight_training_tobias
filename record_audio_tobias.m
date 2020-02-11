@@ -16,7 +16,7 @@ end
 %records audio and sync pulses
 global h_directory_aud h_run_aud h_stop_aud
 global IDsound fs rec_dur input_channels inter_file_time
-global homeDir
+global homeDir batName dateSesh
 
 %create gui
 h_fig = figure('name','Continuous Audio Recording','Position',[65 143 300 500],'ToolBar','none','DockControls','on','MenuBar','none');  
